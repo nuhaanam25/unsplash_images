@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsplash Image Search</title>
+    
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Unsplash Image Search</h1>
+
+   <form id="search-form">
+    
+        <input type="text" id="search-box" placeholder="Search for images...">
+        <button type="submit">Search</button>
+</form>
+<div id="search-result"></div>
+<button id="show-more-btn">Show More</button>
+
+<div id="image-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modal-image" src="" alt="Full size image">
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
