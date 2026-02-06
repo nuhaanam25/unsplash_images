@@ -12,11 +12,12 @@
 
     <h1>Unsplash Image Search</h1>
 
-   <form id="search-form">
+   <form id="search-form" novalidate>
     
-        <input type="text" id="search-box" placeholder="Search for images...">
+        <input type="text" id="search-box" placeholder="Search for images..." required pattern="[a-zA-Z0-9\s\-]+" title="Please enter valid search terms (letters, numbers, spaces, and hyphens only)">
         <button type="submit">Search</button>
 </form>
+<div id="error-message" class="error-message"></div>
 <div id="search-result"></div>
 <button id="show-more-btn">Show More</button>
 

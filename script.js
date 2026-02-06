@@ -11,7 +11,12 @@ let page = 1;
 
 
 async function searchImages() {
-    keyword = searchBox.value;
+    keyword = searchBox.value.trim();
+    const errorMessage = document.getElementById("error-message");
+    
+    // Clear error message
+    errorMessage.style.display = "none";
+    
      const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=12`;
 
      const response = await fetch(url);
@@ -48,6 +53,17 @@ async function searchImages() {
 }
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    const errorMessage = document.getElementById("error-message");
+    
+    // Check if form is valid using HTML5 validation
+    if (!searchForm.checkValidity()) {
+        errorMessage.textContent = searchBox.validationMessage || "Please enter a valid search term.";
+        errorMessage.style.display = "block";
+        searchResult.innerHTML = "";
+        showMoreBtn.style.display = "none";
+        return;
+    }
+    
     page = 1;
     searchImages();
 });

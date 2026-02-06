@@ -98,6 +98,32 @@ form button:active {
   display: block;
 }
 
+.error-message {
+  display: none;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  padding: 15px 20px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  color: #721c24;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #search-result {
   width: 90%;
   margin: 40px auto 50px;
