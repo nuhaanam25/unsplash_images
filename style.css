@@ -121,6 +121,21 @@ form button:active {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.image-item {
+  margin: 10px;
+}
+
+.image-item img {
+  cursor: pointer;
+  width: 100%;
+}
+
+.image-description {
+  margin: 5px 0;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
 .input-wrapper {
     position: relative;
     flex: 1;

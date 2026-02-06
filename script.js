@@ -25,13 +25,23 @@ async function searchImages() {
      const results = data.results;
 
      results.map((result) => {
+        const imageContainer = document.createElement("div");
+        imageContainer.className = "image-item";
+        
         const image = document.createElement("img");
         image.src = result.urls.small;
-        image.style.cursor = "pointer";
+        image.alt = result.alt_description || "Image";
         image.addEventListener("click", () => {
             openModal(result.urls.regular);
         });
-        searchResult.appendChild(image);
+        
+        const description = document.createElement("p");
+        description.className = "image-description";
+        description.textContent = result.alt_description || result.description || "No description";
+        
+        imageContainer.appendChild(image);
+        imageContainer.appendChild(description);
+        searchResult.appendChild(imageContainer);
      });
      showMoreBtn.style.display = "block";
 
